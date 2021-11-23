@@ -7,6 +7,7 @@ express()
   .set('views', path.join(__dirname, 'views'))
   .set('view engine', 'ejs')
   .get('/', (req, res) => res.render('pages/index'))
+  .get('/env', (req, res) => res.send(process.env.NAME))
   .get('/times', (req, res) => res.send(countHitsuji()))
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))
 
